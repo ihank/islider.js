@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<title>Document</title> 
+<style>
+ul{margin: 0;padding: 0;list-style: none;}
+
+.slider-wrap, .slider-roll, .slider-roll .item{position: relative;}
+.slider-wrap, .slider-roll .item{overflow: hidden;} 
+.slider-wrap{width: 500px;height: 120px;}
+
+.slider-ctrl li{float: left;cursor: pointer;width: 20px;height: 20px;overflow: hidden;line-height: 50px;background-color: #bbb;margin-left:3px;}
+.slider-ctrl li.active{background-color: #f60;}
+
+.slider-prev,.slider-next{font-family: serif;color: #fff;display: inline-block;width: 28px;height: 25px;line-height: 25px;text-align: center;cursor: pointer;border-radius: 2px;font-weight: bold;background-color: #000;opacity:0.6;filter:alpha(opacity=60);}
+.slider-prev:hover,.slider-next:hover{opacity:0.8;filter:alpha(opacity=80);}
+
+
+.item{background-color: #eee;height: 120px;text-align: center;line-height: 120px;width: 100%}
+.item:nth-child(2){background-color: #ddd;}
+.item:nth-child(3){background-color: #ccc;}
+.item:nth-child(4){background-color: #bbb;}
+</style>
+</head>
+<body>
+
+<div class="slider">
+	<div class="slider-wrap">
+		<ul class="slider-roll">
+			<li class="item active"><a href="#">1</a></li>
+			<li class="item"><a href="#">2</a></li>
+			<li class="item"><a href="#">3</a></li>
+			<li class="item"><a href="#">4</a></li>
+		</ul>
+	</div>
+	<ol class="slider-ctrl">
+		<li class="active">1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+	</ol>
+	<span class="slider-prev">&lt;</span>
+	<span class="slider-next">&gt;</span>
+</div>
+
+<script src="jquery-1.7.1.min.js"></script>
+<script src="jquery.islider.js"></script>
+<script>
+jQuery.noConflict()(function($){
+	$('.slider').iSlider();
+})
+</script>
+</body>
+</html>
